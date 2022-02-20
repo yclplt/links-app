@@ -29,17 +29,19 @@ const LinkVote = ({
         icon={<PlusOutlined />}
       />
       <Divider />
-      <Select
-        size="md"
-        optionValKey="value"
-        optionLabelKey="name"
-        onChange={onChangeFilter}
-        placeholder="Order By"
-        options={[
-          { name: "Most Voted (A - Z)", value: 2 },
-          { name: "Less Voted (Z - A)", value: 1 },
-        ]}
-      />
+      {data?.length > 0 && (
+        <Select
+          size="md"
+          optionValKey="value"
+          optionLabelKey="name"
+          onChange={onChangeFilter}
+          placeholder="Order By"
+          options={[
+            { name: "Most Voted (A - Z)", value: 2 },
+            { name: "Less Voted (Z - A)", value: 1 },
+          ]}
+        />
+      )}
 
       {data?.length > 0 ? (
         data?.map((link) => (
